@@ -1,0 +1,321 @@
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+ 
+
+
+local OrionLib = loadstring(game:HttpGet((GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('jbMNSPTZnVhdiGHYboCUmRALxfQIETlUqfyFbQudzIkRxtsiUXhDUlpaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NobGV4d2FyZS9Pcmlvbi9tYWluL3NvdXJjZQ=='))))()
+
+local Window = OrionLib:MakeWindow({Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('UMuHWzOaoYytXVQIZsunMdsjxHydiLyOyjZPxFuNYTMNcFMlYcwrtTAdWx0cm9uIPCflKUgMC4y'), HidePremium = false, SaveConfig = true, ConfigFolder = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('FhjiZmJwjnTJJlHvdKXpPOWYMaHfeLaJwvvvJLKtAtblKagNepjJvNhT3Jpb25UZXN0')})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+
+OrionLib:MakeNotification({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('dWxpmtowNXOvfuoGCRzlJbGGSFSnlAGAYEbIUrHxvhuEYJblQxuNAzIdWx0cm9u'),
+	Content = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('oMHgimImxGFzaCDTyhvwMVOcfqhreufRcFJCGsavyWfkIlxXnfCMxUgYmVzdCByb2Jsb3ggaHVi'),
+	Image = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('txHQCynCAlazATfjGxrZOuILMkZZNFNnGqClgibEckqiJbvRekILzPBcmJ4YXNzZXRpZDovLzQ0ODMzNDU5OTg='),
+	Time = 5
+})
+
+--[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+
+local Tab = Window:MakeTab({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ymZDXguVpTqCySRoHJuBJNzGOPVbueLuTnnvSyCugFINkAroClomovOYmxhZGUgYmFsbCDwn5S0IA=='),
+	Icon = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('gXLjJgALTzwjnYOHPxiJjPrgEmTFtIbXFnIAEbKYDqwdxAgEplGLsvXcmJ4YXNzZXRpZDovLzQ0ODMzNDU5OTg='),
+	PremiumOnly = false
+})
+
+
+local Section = Tab:AddSection({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ziTNIXTDoyjgPiDRvYulnigluOLzZUxiDzxYrpRFcvuhNcfrPcCnZSMYmxhZGUgYmFsbCBzY3JpcHRz')
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('jeBXIbeVcxIrDSxgDKoWhOemJYcxdCcNeQpSQEVojQbTKlBanePTULrdmVub3g='),
+	Callback = function()
+      		loadstring(Game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('uPKFbzcitUpKwjNEeTTwYWEvoLAXfUpxZSBxqkBkJSAyDAKLSniYoNxaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0ZzcGxvaXQvdmVub3gtYmxhZGUtYmFsbC12MS9tYWluL0stQS1ULVMtVS1TLUYtUy1QLUwtTy1JLVQtSS1TLUEtRi1VLVItUi1ZJTIwTUFJTiUyMFY0')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('uWjJXlmMokVgctDwltLoMksepGCfrEdsAOmeYQNwUhSjkVibHBnZQbOZXhwbw=='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('wMycTskQDRQQITdURDqHPOWmMVzzpJYKLuMmZjSZDyYPBGwlTgiudqEaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0V4cG9TcGxvaXRzL2V4cG8ta2V5LXN5c3RlbS9tYWluL0V4cG8lMjBLZXk='),true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('czInpFFcRjHdYHqZAkYAOHgoaJoVGhDDTPDXcYVzTgzMQUtDwXwjhmAa2FyaW8='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('dBKGzCRfQgtgFjbAOViMrGdDxdzgfTSNMBsFmxNGeodOcILuYeqEeyLaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0pvc2lhaFNjcmlwdHMvS2Fpcm8tVjEvbWFpbi9LYWlybyUyMFYx')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('jHUDLyzIhUKtnGWPMqVreeneNSaNdEVufnFLEpwazqKbZmdlCWILOwvZGNkeGhmaGRi'),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('cSMHzHbMJZNoVTrdvyfBUgWYQlKeONjrpbrqvUIIMMCyfoSWAtjUwOPaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0F0cmV1cy1IdWIvRGVuRGVuWi1DcmVhdGlvbnovbWFpbi9LZXlSQkxYJTIwQmxhZGVCYWxs')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('awEHYiISUqGhOSnjsxgIEMvNSZlwzOkFVcSKVvJTKiTiUTzRTPlklUIZ2xscHA='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('SzZDQKgPgmvOSHLAmNNEvbYCnGDPHiOlgIBHaekPITCwmYFLjuxgVpLaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3NvbmdvbGFzYW5na2F0YW5ndy9tZW1lay9tYWluL2FkYWtvbnRvbHNhbWFtZW1lay5sdWE=')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('YIiuZszBHHSQeCxfOZtjEOzpnYqdOUjJagqXSrEZetryhDbRWbgyTfbaW5zYW5pdHk='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('BmqkYOdCwaNKFWxpxkUmXsPjkYAlQXEdVfwBITFUEyJSCIfFVYlUiCNaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2hlbGxkZXZlbG9wbWVudC9Sb2Jsb3hTY3JpcHRzL21haW4vU2FuaXR5TG9hZGVyLmx1YQ==')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('zMdLwjuzrQYxYOZEwJZcIXWnrqLKjGUIqsdXUKUXQCOxtyBtzOoYRgrbmV4YW0='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('OPBBOsvozKPwdPBzoaQNHRjJsqZuEMjoebxXNLmsRZFbTeBKtILvAGqaHR0cHM6Ly9hcGkubHVhcm1vci5uZXQvZmlsZXMvdjMvbG9hZGVycy82YWY1NmMxNzUzYWM2Njc5ZGVlM2FjYmQxZmQ5NTJlNS5sdWE=')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('aGQmeFVkIzVvGmmSXJSVUarPCKmRMQoOWnhGTZgMsRuGVdYuHXfLlFWZHVua2Fua2Vl'),
+	Callback = function()
+      		xpcall(function()
+loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('njnKQlqOZfCzIbXmXnAIvuGkONkVvzzuEUdPfwqKdVDHClvoZquCPVgaHR0cHM6Ly9naXRodWIuY29tL1N0YW5nMDAxL3B1bGF3YXQvYmxvYi9tYWluL0JsYWRlQmFsbC5sdWE/cmF3PXRydWU=')))()
+end,function()
+warn(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('IrCrSiQkpUmxIVRrShtotoLNZjqhLsBxwMgjqbosSmfovMaQpOLgJBXU2NyaXB0IGVycm9yIQ=='))
+end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('LUIhSXgrOljmNLGLqIDgzSlBkvYUkohcNJcOBOfNanEkzPHXfJQYiCbYmxlYWNoLWhhY2s='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('VkSXcSJptyLxAbonKqYMWVjhJFrjWZNiYZghOisXbBvWkPsTQiZbcjRaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2RldmRvcm96L2JsZWFjaGhhY2svbWFpbi9uZXdsb2FkZXIubHVh')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('EcQYvnsfMTLbHEFizXjkxqWislYXifBLvblbEGIfybCEYjGxZDggyVtYmVkb2w='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('tzAeVzMJYdfbXglVJoOistUVIVutYavcYOHIyEvwzChHnrwVZxNtnDLaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25xeGxPZmMvTG9hZGVycy9tYWluL0JsYWRlX0JhbGwubHVh')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('xxrVZPItYakYGreumiaeAWcNlPSokwRAiVpJjcFXXEGaOvMmjJdYoXpYmxveCBmcnVpdHMg8J+NjyA='),
+	Icon = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('QoikMEIKhMeHozrCntbsSafgcgpLabtjCzMjSwirbHDsQbcGOBaYhytcmJ4YXNzZXRpZDovLzQ0ODMzNDU5OTg='),
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('XEmGicjCJdXLLMsYvYirKZsStBePxgSTKIzsnozYQTrEDICjCfkQWJoYmxveCBmcnVpdHMgc2NyaXB0cw==')
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('mtDIgpOyuglAcZGvcjLhDLBzpCJSmXQVHZwyjOtXhJKLLtnDMTQAYqJbmph'),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('LjaUhELONRjcLYTZWggKPnGogwAYiEPRaEcWJEOxPrPqsyusXauZjcKaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1NjcmlwdC1CbG94L1NjcmlwdC9tYWluL04tSmEuTHVh')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('UIWNryGABzYmouniZEODgOcuwlJmmXwbejNPliVKVfqeNfnaMGNWPtHZGEgaG9vZCDwn5Sr'),
+	Icon = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('SUVYEdMBoGduiqPFyzqqrzUOYfczctIxnvFulrBdNNClOiRGoFakdgfcmJ4YXNzZXRpZDovLzQ0ODMzNDU5OTg='),
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('JpdRarXBOcFYMKzzaZQxeYZDTYkXORSDHIuPuvpNjUhQPFFaSldQxWQZGFob29kIHNjcmlwdHM=')
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('tRnzVRTUwIlKsaapnOUjmFHiUGEpWCVPSGnmvMsqWukNLAlwUXBQAlPZmFkZWQ='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('YGCdAIRkphZVClmugwKZhMcyjUpzQnSDFEddxHCBqXKxtNZblQpiGyGaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL05pZ2h0ZXJFcGljL0ZhZGVkL21haW4vWWVzRXBpYw=='), true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ZHvjnjnhOEpQDiAGzFbmAWlFjadcObdQfisryqHCvXxVlCcQJrkhlPkUG9sYWt5YQ=='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('VyxpxwxaFMGaiOZtaJiqGYszEPDzcuFLAtEyPHxaFnqAIXEDohSSsnPaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3BpeGVsaGVhZHgvUG9sYWt5YS9tYWluL0Jlc3RzY3JpcHQubWQ=')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('IFtAAuIwaGClIrKlowpjbIyoLLmwdRGXamahobqapKKNjtHIOeCpTcwdm9ydGV4'),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ZbqavlhTuCVXaqBgvyIRXyhcBczKPNZMIvVpGQwyJJIjQiaCOhXPfKCaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0ltYWdpbmVQcm9Vc2VyL3ZvcnRleGRhaG9vZC9tYWluL3ZvcnRleA=='), true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ydhEoEHCRCiQeDBWGFWSlIIGfIXAsunKavvOMjlJsDjjTfjozPBgtUhQXp1cmU='),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('wNrREHAvwCqrGeoYHgxZIqpatROGBITWiKQCMfkqVrKQIbBerqCUWMvaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FjdHlybi9TY3JpcHRzL21haW4vQXp1cmVNb2RkZWQ=')))()
+
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('piUneVOXqlNDAubHtKJSaQmGgGVkestbyARBIIcXTlrXJwxgxENXWihVEJP'),
+	Callback = function()
+      		loadstring(game:HttpGet(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('mgRdkXkBfKnrDJsHFhOwYJaQwzfqRnIHLTEKNJopUZqENlmJUiYYvrLaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Nvb2w1MDEzL1RCTy9tYWluL1RCT3NjcmlwdA==')))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('MyjTKbziYbChYIDLhxOIAcdyzoMrTVCMBYGJBlAnqhmhvOTToLKQpHYbW0yIPCflKo='),
+	Icon = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('BzbzfBCITKuiTboPcxcroUEeYQnGHslVMJEBBrnIlwSAFagLNXLYdNycmJ4YXNzZXRpZDovLzQ0ODMzNDU5OTg='),
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('ZVdLbdkFrOmJzjCQqUFOkIcyZJQIeoihiuaZVNRIkbEqoMFCtIFkFTwZHJpZnRlcg=='),
+	Callback = function()
+      		loadstring(game:HttpGetAsync(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('jwfJBmBzpvBbwyxgOXYAFAlttzVkPYmsSJNGFnhnwaEYoXnMrDzSrjwaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0RyaWZ0ZXIwNTA3L0dVSVMvbWFpbi9NVVJERVIlMjBNWVNURVJZJTIwMg=='), true))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('dVAGVUgTcnXNhEAxDyfCHgJwSoAuBXYePAdLMrmTUZCQfaOxiIttIqhVnluaXh1'),
+	Callback = function()
+      		loadstring(game:GetObjects(GbhQOjwwviBLhKYgnmEwTPXzfkowCAgGJnFQyzViZPFBRVAbJkGrSubWjMnkbpTTzaZKSIBqNGPRjq('zYcklsMbGYHJaSMRpewBmEhWnQgUEoGUWUvDMCCyUCVfJzRWUzeeexxcmJ4YXNzZXRpZDovLzQwMDExMTgyNjE='))[1].Source)()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]    
